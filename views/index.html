@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gen Ticket</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="asset/css/image-picker.css">
+
+</head>
+
+<body>
+  <form action="/template" method="POST" enctype="multipart/form-data">
+    <div style="display:inline-block">
+      <input type="file" name="filetoupload" id="filetoupload">
+    </div>
+    <div style="display:inline-block;float: left;">
+      <select class="image-picker show-html" name="template">
+      <option data-img-src="asset/template/Template_Paper ticket-01.png" data-img-class="first" value="1">  Page 1  </option>
+      <option data-img-src="asset/template/Template_Paper ticket-03.png" value="2">  Page 2  </option>
+      <option data-img-src="asset/template/Template_Paper ticket-04.png" value="3">  Page 3  </option>
+      <option data-img-src="asset/template/Template_Paper ticket-05.png" value="4">  Page 4  </option>
+    </select>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="asset/js/image-picker.min.js"></script>
+  <script>
+    $("select").imagepicker({
+      hide_select: true,
+      show_label: false
+    })
+  </script>
+</body>
+
+</html>

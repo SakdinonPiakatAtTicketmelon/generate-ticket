@@ -1,0 +1,141 @@
+@page {
+    size: 7in 9.25in;
+    margin: 5mm 10mm 5mm 10mm;
+}
+
+page[size="A4"] {
+    background: white;
+    width: 21cm;
+    height: 29.7cm;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+}
+
+.ticket3 {
+    color: darkslategray;
+    position: relative;
+    width: 800px;
+    height: 267px;
+    display: inline-block;
+}
+
+.template3 {
+    width: 790px;
+    object-fit: scale-down;
+    position: absolute;
+}
+
+.ticket3 .eventDate {
+    position: absolute;
+    left: 465px;
+    top: 45px;
+    text-align: center;
+    width: 60px;
+}
+
+.ticket3 .eventMonth {
+    position: absolute;
+    font-weight: 100;
+    left: 465px;
+    top: 85px;
+    width: 60px;
+    text-align: center;
+}
+
+.ticket3 .eventTime {
+    position: absolute;
+    font-weight: 100;
+    left: 465px;
+    top: 115px;
+    width: 60px;
+    text-align: left;
+}
+
+.ticket3 .eventTimeUnit {
+    position: absolute;
+    font-weight: 100;
+    left: 465px;
+    top: 115px;
+    width: 60px;
+    text-align: right;
+}
+
+.ticket3 .eventName {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 50px;
+    top: 20px;
+    width: 320px;
+    height: 55px;
+    color: yellow;
+}
+
+.ticket3 .eventCustomer {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 250px;
+    top: 195px;
+    width: 210px;
+    color: yellow;
+}
+
+.ticket3 .eventType {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 55px;
+    color: yellow;
+    top: 195px;
+}
+
+.ticket3 .eventPrice {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 170px;
+    top: 195px;
+    color: yellow;
+}
+
+.ticket3 .eventOrder {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 473px;
+    top: 195px;
+    color: yellow;
+}
+
+.ticket3 .eventQRStr {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    left: 620px;
+    top: 30px;
+}
+
+.ticket3 .eventQRImg {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    left: 620px;
+    top: 75px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid;
+}
+
+.ticket3 .eventNo {
+    position: absolute;
+    text-align: left;
+    width: 100px;
+    left: 705px;
+    top: 65px;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}

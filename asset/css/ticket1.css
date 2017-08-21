@@ -1,0 +1,127 @@
+@page {
+    size: 7in 9.25in;
+    margin: 5mm 10mm 5mm 10mm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+page[size="A4"] {
+    background: white;
+    width: 21cm;
+    height: 29.7cm;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+}
+
+.ticket1 {
+    color: darkslategray;
+    position: relative;
+    width: 800px;
+    height: 267px;
+    display: inline-block;
+}
+
+.template1 {
+    border: 1px solid;
+    width: 790px;
+    object-fit: scale-down;
+    position: absolute;
+}
+
+.ticket1 .eventDate {
+    position: absolute;
+    left: 55px;
+    top: 15px;
+    text-align: center;
+    width: 60px;
+}
+
+.ticket1 .eventMonth {
+    position: absolute;
+    font-weight: 100;
+    left: 55px;
+    top: 50px;
+    width: 60px;
+    text-align: center;
+}
+
+.ticket1 .eventName {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 125px;
+    top: 35px;
+    width: 400px;
+}
+
+.ticket1 .eventCustomer {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 57px;
+    top: 130px;
+}
+
+.ticket1 .eventType {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 57px;
+    top: 195px;
+}
+
+.ticket1 .eventPrice {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 255px;
+    top: 195px;
+}
+
+.ticket1 .eventOrder {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 381px;
+    top: 195px;
+}
+
+.ticket1 .eventQRStr {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 120px;
+    left: 600px;
+    top: 36px;
+}
+
+.ticket1 .eventQRImg {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    left: 600px;
+    top: 100px;
+    height: 120px;
+    width: 120px;
+    border: 1px solid;
+}
+
+.ticket1 .eventNo {
+    position: absolute;
+    text-align: left;
+    width: 130px;
+    left: 687px;
+    top: 60px;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
