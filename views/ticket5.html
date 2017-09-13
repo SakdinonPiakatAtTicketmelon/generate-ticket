@@ -3,14 +3,14 @@
 
 <head>
     <title>Gen Ticket</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/ticket4.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/ticket1.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-    <page id='page' size='A4'>
-
+    <page id='page' size='ticket'>
     </page>
+
 
     <script>
         var data = '<%- JSON.stringify(data) %>'
@@ -35,8 +35,8 @@
         function CreateTicket(
             eventDateParam,
             eventMonthParam,
-            eventTimeParam,
-            eventTimeUnitParam,
+            eventTime,
+            eventTimeUnit,
             eventNameParam,
             eventCustomerParam,
             eventTypeParam,
@@ -46,56 +46,56 @@
             eventNoParam
         ) {
             var ticket = document.createElement("DIV");
-            ticket.className += 'ticket4';
+            ticket.className += 'ticket1';
             var template = document.createElement("IMG");
-            template.className += 'template4';
-            template.src += 'asset/template/Template_Paper ticket-05.png';
+            template.className += 'template1';
+            template.src += 'asset/template/Template_Paper ticket-02.png';
 
-            var eventDate = document.createElement("H1");
+            var eventDate = document.createElement("H2");
             eventDate.className += 'eventDate';
             var eventDateText = document.createTextNode(eventDateParam);
             eventDate.appendChild(eventDateText);
 
-            var eventMonth = document.createElement("H2");
+            var eventMonth = document.createElement("H3");
             eventMonth.className += 'eventMonth';
             var eventMonthText = document.createTextNode(eventMonthParam);
             eventMonth.appendChild(eventMonthText);
 
-            var eventName = document.createElement("H5");
+            var eventName = document.createElement("H3");
             eventName.className += 'eventName';
             var eventNameText = document.createTextNode(eventNameParam);
             eventName.appendChild(eventNameText);
 
-            var eventCustomer = document.createElement("H5");
+            var eventCustomer = document.createElement("H4");
             eventCustomer.className += 'eventCustomer';
             var eventCustomerText = document.createTextNode(eventCustomerParam);
             eventCustomer.appendChild(eventCustomerText);
 
-            var eventType = document.createElement("H5");
+            var eventType = document.createElement("H4");
             eventType.className += 'eventType';
             var eventTypeText = document.createTextNode(eventTypeParam);
             eventType.appendChild(eventTypeText);
 
-            var eventPrice = document.createElement("H5");
+            var eventPrice = document.createElement("H4");
             eventPrice.className += 'eventPrice';
             var eventPriceText = document.createTextNode(eventPriceParam);
             eventPrice.appendChild(eventPriceText);
 
-            var eventOrder = document.createElement("H5");
+            var eventOrder = document.createElement("H4");
             eventOrder.className += 'eventOrder';
             var eventOrderText = document.createTextNode(eventOrderParam);
             eventOrder.appendChild(eventOrderText);
 
-            var eventQRStr = document.createElement("H5");
+            var eventQRStr = document.createElement("H4");
             eventQRStr.className += 'eventQRStr';
             var eventQRStrText = document.createTextNode(eventQRStrParam);
             eventQRStr.appendChild(eventQRStrText);
 
             var eventQRImg = document.createElement("IMG");
             eventQRImg.className += 'eventQRImg';
-            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=80x80'
+            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=90x90'
 
-            var eventNo = document.createElement("H4");
+            var eventNo = document.createElement("H3");
             eventNo.className += 'eventNo';
             var eventNoText = document.createTextNode(eventNoParam);
             eventNo.appendChild(eventNoText);
@@ -115,6 +115,7 @@
         }
         GenTicket(data)
     </script>
+    
 </body>
 
 </html>

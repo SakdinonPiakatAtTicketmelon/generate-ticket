@@ -44,11 +44,17 @@ app.post('/template', (req, res) => {
             case '2':
               res.render(path.join(__dirname + '/views/ticket2.html'), { data: data })
               break;
+            case '2.1':
+              res.render(path.join(__dirname + '/views/ticket2.1.html'), { data: data })
+              break;
             case '3':
               res.render(path.join(__dirname + '/views/ticket3.html'), { data: data })
               break;
             case '4':
               res.render(path.join(__dirname + '/views/ticket4.html'), { data: data })
+              break;
+            case '5':
+              res.render(path.join(__dirname + '/views/ticket5.html'), { data: data })
               break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })

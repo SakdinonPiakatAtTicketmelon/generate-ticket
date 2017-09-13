@@ -1,3 +1,6 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
 ul.thumbnails.image_picker_selector {
     width: 400px;
     overflow: auto;

@@ -3,12 +3,12 @@
 
 <head>
     <title>Gen Ticket</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/ticket4.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/ticket2.1.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-    <page id='page' size='A4'>
+    <page id='page' size='ticket'>
 
     </page>
 
@@ -46,10 +46,10 @@
             eventNoParam
         ) {
             var ticket = document.createElement("DIV");
-            ticket.className += 'ticket4';
+            ticket.className += 'ticket2';
             var template = document.createElement("IMG");
-            template.className += 'template4';
-            template.src += 'asset/template/Template_Paper ticket-05.png';
+            template.className += 'template2';
+            template.src += 'asset/template/Template_Paper ticket-03.1.png';
 
             var eventDate = document.createElement("H1");
             eventDate.className += 'eventDate';
@@ -61,7 +61,17 @@
             var eventMonthText = document.createTextNode(eventMonthParam);
             eventMonth.appendChild(eventMonthText);
 
-            var eventName = document.createElement("H5");
+            var eventTime = document.createElement("H4");
+            eventTime.className += 'eventTime';
+            var eventTimeText = document.createTextNode(eventTimeParam);
+            eventTime.appendChild(eventTimeText);
+
+            var eventTimeUnit = document.createElement("H6");
+            eventTimeUnit.className += 'eventTimeUnit';
+            var eventTimeUnitText = document.createTextNode(eventTimeUnitParam);
+            eventTimeUnit.appendChild(eventTimeUnitText);
+
+            var eventName = document.createElement("H3");
             eventName.className += 'eventName';
             var eventNameText = document.createTextNode(eventNameParam);
             eventName.appendChild(eventNameText);
@@ -93,9 +103,9 @@
 
             var eventQRImg = document.createElement("IMG");
             eventQRImg.className += 'eventQRImg';
-            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=80x80'
+            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=100x100'
 
-            var eventNo = document.createElement("H4");
+            var eventNo = document.createElement("H5");
             eventNo.className += 'eventNo';
             var eventNoText = document.createTextNode(eventNoParam);
             eventNo.appendChild(eventNoText);
@@ -103,6 +113,8 @@
             ticket.appendChild(template);
             ticket.appendChild(eventDate);
             ticket.appendChild(eventMonth);
+            ticket.appendChild(eventTime);
+            ticket.appendChild(eventTimeUnit);
             ticket.appendChild(eventName);
             ticket.appendChild(eventCustomer);
             ticket.appendChild(eventType);

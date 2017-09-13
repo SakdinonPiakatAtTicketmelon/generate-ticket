@@ -4,10 +4,11 @@
 <head>
     <title>Gen Ticket</title>
     <link rel="stylesheet" type="text/css" href="asset/css/ticket2.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-    <page id='page' size='A4'>
+    <page id='page' size='ticket'>
 
     </page>
 
@@ -60,42 +61,42 @@
             var eventMonthText = document.createTextNode(eventMonthParam);
             eventMonth.appendChild(eventMonthText);
 
-            var eventTime = document.createElement("H3");
+            var eventTime = document.createElement("H4");
             eventTime.className += 'eventTime';
             var eventTimeText = document.createTextNode(eventTimeParam);
             eventTime.appendChild(eventTimeText);
 
-            var eventTimeUnit = document.createElement("H5");
+            var eventTimeUnit = document.createElement("H6");
             eventTimeUnit.className += 'eventTimeUnit';
             var eventTimeUnitText = document.createTextNode(eventTimeUnitParam);
             eventTimeUnit.appendChild(eventTimeUnitText);
 
-            var eventName = document.createElement("H2");
+            var eventName = document.createElement("H3");
             eventName.className += 'eventName';
             var eventNameText = document.createTextNode(eventNameParam);
             eventName.appendChild(eventNameText);
 
-            var eventCustomer = document.createElement("H4");
+            var eventCustomer = document.createElement("H5");
             eventCustomer.className += 'eventCustomer';
             var eventCustomerText = document.createTextNode(eventCustomerParam);
             eventCustomer.appendChild(eventCustomerText);
 
-            var eventType = document.createElement("H4");
+            var eventType = document.createElement("H5");
             eventType.className += 'eventType';
             var eventTypeText = document.createTextNode(eventTypeParam);
             eventType.appendChild(eventTypeText);
 
-            var eventPrice = document.createElement("H3");
+            var eventPrice = document.createElement("H5");
             eventPrice.className += 'eventPrice';
             var eventPriceText = document.createTextNode(eventPriceParam);
             eventPrice.appendChild(eventPriceText);
 
-            var eventOrder = document.createElement("H4");
+            var eventOrder = document.createElement("H5");
             eventOrder.className += 'eventOrder';
             var eventOrderText = document.createTextNode(eventOrderParam);
             eventOrder.appendChild(eventOrderText);
 
-            var eventQRStr = document.createElement("H4");
+            var eventQRStr = document.createElement("H5");
             eventQRStr.className += 'eventQRStr';
             var eventQRStrText = document.createTextNode(eventQRStrParam);
             eventQRStr.appendChild(eventQRStrText);
@@ -104,7 +105,7 @@
             eventQRImg.className += 'eventQRImg';
             eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=100x100'
 
-            var eventNo = document.createElement("H4");
+            var eventNo = document.createElement("H5");
             eventNo.className += 'eventNo';
             var eventNoText = document.createTextNode(eventNoParam);
             eventNo.appendChild(eventNoText);

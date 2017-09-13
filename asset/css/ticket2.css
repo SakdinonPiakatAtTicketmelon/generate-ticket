@@ -1,12 +1,11 @@
 @page {
-    size: 7in 9.25in;
+    size: 21cm 30cm;
     margin: 5mm 10mm 5mm 10mm;
 }
-
-page[size="A4"] {
+page[size="ticket"] {
     background: white;
     width: 21cm;
-    height: 29.7cm;
+    height: 30cm;
     display: block;
     margin: 0 auto;
     margin-bottom: 0.5cm;
@@ -15,40 +14,42 @@ page[size="A4"] {
 .ticket2 {
     color: darkslategray;
     position: relative;
-    width: 800px;
-    height: 267px;
+    width: 16cm;
+    height: 5cm;
     display: inline-block;
+    margin: 3mm;
+    margin-left: 3cm;
 }
 
 .template2 {
-    border: 1px solid;
-    width: 790px;
-    object-fit: scale-down;
+    width: 16cm;
+    height: 5cm;
     position: absolute;
+    border: 1px solid black;
 }
 
 .ticket2 .eventDate {
     position: absolute;
-    left: 465px;
-    top: 45px;
+    left: 355px;
+    top: 15px;
     text-align: center;
-    width: 60px;
+    width: 50px;
 }
 
 .ticket2 .eventMonth {
     position: absolute;
     font-weight: 100;
-    left: 465px;
-    top: 85px;
-    width: 60px;
+    left: 355px;
+    top: 50px;
+    width: 50px;
     text-align: center;
 }
 
 .ticket2 .eventTime {
     position: absolute;
     font-weight: 100;
-    left: 465px;
-    top: 115px;
+    left: 357px;
+    top: 80px;
     width: 60px;
     text-align: left;
 }
@@ -56,8 +57,8 @@ page[size="A4"] {
 .ticket2 .eventTimeUnit {
     position: absolute;
     font-weight: 100;
-    left: 465px;
-    top: 115px;
+    left: 350px;
+    top: 75px;
     width: 60px;
     text-align: right;
 }
@@ -66,9 +67,9 @@ page[size="A4"] {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    left: 50px;
-    top: 30px;
-    width: 320px;
+    left: 40px;
+    top: 35px;
+    width: 290px;
     height: 55px;
 }
 
@@ -76,33 +77,33 @@ page[size="A4"] {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    left: 250px;
-    top: 195px;
-    width: 210px;
+    left: 226px;
+    top: 130px;
+    width: 130px;
 }
 
 .ticket2 .eventType {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    left: 50px;
-    top: 195px;
+    left: 38px;
+    top: 130px;
 }
 
 .ticket2 .eventPrice {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    left: 170px;
-    top: 195px;
+    left: 130px;
+    top: 130px;
 }
 
 .ticket2 .eventOrder {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    left: 473px;
-    top: 195px;
+    left: 364px;
+    top: 130px;
 }
 
 .ticket2 .eventQRStr {
@@ -110,27 +111,26 @@ page[size="A4"] {
     font-weight: bold;
     text-align: center;
     width: 100px;
-    left: 620px;
-    top: 30px;
+    left: 466px;
+    top: 10px;
 }
 
 .ticket2 .eventQRImg {
     position: absolute;
     font-weight: bold;
     text-align: center;
-    left: 620px;
-    top: 75px;
-    height: 100px;
-    width: 100px;
-    border: 1px solid;
+    left: 475px;
+    top: 50px;
+    height: 80px;
+    width: 80px;
 }
 
 .ticket2 .eventNo {
     position: absolute;
     text-align: left;
     width: 100px;
-    left: 705px;
-    top: 65px;
+    left: 530px;
+    top: 20px;
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
