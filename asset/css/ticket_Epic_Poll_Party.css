@@ -1,0 +1,134 @@
+@page {
+    size: 6.1cm 9.7cm;
+    display: inline-block;
+}
+
+page[size="ticket"] {
+    width: 6.1cm;
+    height: 9.7cm;
+    display: inline-block;
+}
+
+.ticket2 {
+    color: darkslategray;
+    position: relative;
+    width: 5.5cm;
+    height: 9cm;
+    margin: 0.3cm;
+    display: inline-block;
+}
+
+.template2 {
+    width: 5.5cm;
+    height: 9cm;
+    position: absolute;
+}
+
+.ticket2 .eventDate {
+    position: absolute;
+    left: 355px;
+    top: 15px;
+    text-align: center;
+    width: 50px;
+}
+
+.ticket2 .eventMonth {
+    position: absolute;
+    font-weight: 100;
+    left: 355px;
+    top: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.ticket2 .eventTime {
+    position: absolute;
+    font-weight: 100;
+    left: 357px;
+    top: 80px;
+    width: 60px;
+    text-align: left;
+}
+
+.ticket2 .eventTimeUnit {
+    position: absolute;
+    font-weight: 100;
+    left: 350px;
+    top: 75px;
+    width: 60px;
+    text-align: right;
+}
+
+.ticket2 .eventName {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 40px;
+    top: 35px;
+    width: 290px;
+    height: 55px;
+}
+
+.ticket2 .eventCustomer {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 226px;
+    top: 115px;
+    font-size: 20px;
+    width: 130px;
+}
+
+.ticket2 .eventType {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 38px;
+    top: 130px;
+}
+
+.ticket2 .eventPrice {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 130px;
+    top: 130px;
+}
+
+.ticket2 .eventOrder {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 364px;
+    top: 130px;
+}
+
+.ticket2 .eventQRStr {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 76px;
+    left: 124px;
+    top: 280px;
+}
+
+.ticket2 .eventQRImg {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    left: 132px;
+    top: 245px;
+    height: 60px;
+    width: 60px;
+}
+
+.ticket2 .eventNo {
+    position: absolute;
+    text-align: left;
+    width: 100px;
+    left: 530px;
+    top: 20px;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}

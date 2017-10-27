@@ -56,6 +56,12 @@ app.post('/template', (req, res) => {
             case '5':
               res.render(path.join(__dirname + '/views/ticket5.html'), { data: data })
               break;
+            case '6':
+              res.render(path.join(__dirname + '/views/ticket_Epic_Poll_Party.html'), { data: data })
+              break;
+            case '7':
+              res.render(path.join(__dirname + '/views/ticket_maya_complimentary.html'), { data: data })
+              break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
           }

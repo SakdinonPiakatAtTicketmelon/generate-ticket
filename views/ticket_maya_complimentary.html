@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gen Ticket</title>
+    <link rel="stylesheet" type="text/css" href="asset/css/ticket_maya_complimentary.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body style="margin:0%">
+    <page id='page' size='ticket'>
+    </page>
+
+
+    <script>
+        var data = '<%- JSON.stringify(data) %>'
+        function GenTicket(data) {
+            const dataJson = JSON.parse(data)
+            dataJson.map((ticket) => {
+                CreateTicket(
+                    ticket.eventDateParam,
+                    ticket.eventMonthParam,
+                    ticket.eventTimeParam,
+                    ticket.eventTimeUnitParam,
+                    ticket.eventNameParam,
+                    ticket.eventCustomerParam,
+                    ticket.eventTypeParam,
+                    ticket.eventPriceParam,
+                    ticket.eventOrderParam,
+                    ticket.eventQRStrParam,
+                    ticket.eventNoParam
+                )
+            })
+        }
+        function CreateTicket(
+            eventDateParam,
+            eventMonthParam,
+            eventTime,
+            eventTimeUnit,
+            eventNameParam,
+            eventCustomerParam,
+            eventTypeParam,
+            eventPriceParam,
+            eventOrderParam,
+            eventQRStrParam,
+            eventNoParam
+        ) {
+            var ticket = document.createElement("DIV");
+            ticket.className += 'ticket2';
+            var template = document.createElement("IMG");
+            template.className += 'template2';
+            template.src += 'asset/template/Template_MAYA-Complimentary.jpg';
+
+            var eventQRStr = document.createElement("H6");
+            eventQRStr.className += 'eventQRStr';
+            var eventQRStrText = document.createTextNode(eventQRStrParam);
+            eventQRStr.appendChild(eventQRStrText);
+
+            var eventNo = document.createElement("H6");
+            eventNo.className += 'eventNo';
+            var eventNoText = document.createTextNode(eventNoParam);
+            eventNo.appendChild(eventNoText);
+
+
+            var eventQRImg = document.createElement("IMG");
+            eventQRImg.className += 'eventQRImg';
+            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=60x60'
+
+            ticket.appendChild(template);
+            ticket.appendChild(eventQRStr);
+            ticket.appendChild(eventQRImg);
+            ticket.appendChild(eventNo);
+            document.getElementById('page').appendChild(ticket);
+        }
+        GenTicket(data)
+    </script>
+    
+</body>
+
+</html>
