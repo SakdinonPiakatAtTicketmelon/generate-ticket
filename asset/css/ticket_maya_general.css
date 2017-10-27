@@ -1,19 +1,18 @@
 @page {
     size: 5.5cm 8.6cm;
-    display: grid;
 }
 
 page[size="ticket"] {
-    size: 5.5cm 8.6cm;
-    display: grid;
+    width: 5.5cm;
+    height: 8.6cm;
+    display: inline-block;
 }
 .ticket2 {
     color: darkslategray;
     position: relative;
-    margin-bottom: 0.1cm;
     width: 5.5cm;
     height: 8.5cm;
-    display: inline-block;
+    margin-bottom: 1mm;
 }
 
 .template2 {
@@ -121,9 +120,10 @@ page[size="ticket"] {
 }
 
 .ticket2 .eventNo {
+    color: white;
     position: absolute;
     text-align: center;
     width: 85px;
-    left: 104px;
-    top: 162px;
+    left: 20px;
+    top: 275px;
 }

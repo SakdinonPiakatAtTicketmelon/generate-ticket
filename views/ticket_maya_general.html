@@ -3,12 +3,12 @@
 
 <head>
     <title>Gen Ticket</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/ticket_maya_genneral.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/ticket_maya_general.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body style="margin:0%">
-    <page id='page' size='ticket'>
+    <page id='page'>
     </page>
 
 
@@ -45,6 +45,11 @@
             eventQRStrParam,
             eventNoParam
         ) {
+            var ticketPage = document.createElement("PAGE");
+            ticketPage.size += 'ticket';
+            ticketPage.className += 'ticketPage';
+            ticketPage.id += 'ticketPage';
+            
             var ticket = document.createElement("DIV");
             ticket.className += 'ticket2';
             var template = document.createElement("IMG");
@@ -70,6 +75,8 @@
             ticket.appendChild(eventQRStr);
             ticket.appendChild(eventQRImg);
             ticket.appendChild(eventNo);
+            ticketPage.appendChild(ticket);
+            
             document.getElementById('page').appendChild(ticket);
         }
         GenTicket(data)
