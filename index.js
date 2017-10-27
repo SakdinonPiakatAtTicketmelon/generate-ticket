@@ -62,6 +62,9 @@ app.post('/template', (req, res) => {
             case '7':
               res.render(path.join(__dirname + '/views/ticket_maya_complimentary.html'), { data: data })
               break;
+            case '8':
+              res.render(path.join(__dirname + '/views/ticket_maya_general.html'), { data: data })
+              break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
           }
