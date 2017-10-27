@@ -1,24 +1,24 @@
 @page {
-    size: 222.98px 335px;
+    size: 230.55px 343.92px;
 }
 
 page[size="ticket"] {
-    width: 222.98px;
-    height: 335px;
+    width: 230.55px;
+    height: 343.92px;
     display: inline-block;
 }
 
 .ticket2 {
     color: darkslategray;
     position: relative;
-    width: 222.98px;
-    height: 335px;
+    width: 230.55px;
+    height: 343.92px;
     margin-bottom: 1mm;
 }
 
 .template2 {
-    width: 222.98px;
-    height: 335px;
+    width: 230.55px;
+    height: 343.92px;
     position: absolute;
 }
 
@@ -106,7 +106,7 @@ page[size="ticket"] {
     font-weight: bold;
     text-align: center;
     width: 76px;
-    left: 120px;
+    left: 124px;
     top: 60px;
 }
 
@@ -114,8 +114,8 @@ page[size="ticket"] {
     position: absolute;
     font-weight: bold;
     text-align: center;
-    left: 115px;
-    top: 105px;
+    left: 120px;
+    top: 108px;
     height: 85px;
     width: 85px;
 }
@@ -126,5 +126,5 @@ page[size="ticket"] {
     text-align: right;
     width: 40px;
     left: 25px;
-    top: 282px;
+    top: 290px;
 }
