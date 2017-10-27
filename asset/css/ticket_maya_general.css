@@ -1,23 +1,24 @@
 @page {
-    size: 5.5cm 8.6cm;
+    size: 222.98px 335px;
 }
 
 page[size="ticket"] {
-    width: 5.5cm;
-    height: 8.6cm;
+    width: 222.98px;
+    height: 335px;
     display: inline-block;
 }
+
 .ticket2 {
     color: darkslategray;
     position: relative;
-    width: 5.5cm;
-    height: 8.5cm;
+    width: 222.98px;
+    height: 335px;
     margin-bottom: 1mm;
 }
 
 .template2 {
-    width: 5.5cm;
-    height: 8.5cm;
+    width: 222.98px;
+    height: 335px;
     position: absolute;
 }
 
@@ -105,16 +106,16 @@ page[size="ticket"] {
     font-weight: bold;
     text-align: center;
     width: 76px;
-    left: 110px;
-    top: 55px;
+    left: 120px;
+    top: 60px;
 }
 
 .ticket2 .eventQRImg {
     position: absolute;
     font-weight: bold;
     text-align: center;
-    left: 105px;
-    top: 99px;
+    left: 115px;
+    top: 105px;
     height: 85px;
     width: 85px;
 }
@@ -122,8 +123,8 @@ page[size="ticket"] {
 .ticket2 .eventNo {
     color: white;
     position: absolute;
-    text-align: center;
-    width: 85px;
-    left: 20px;
-    top: 275px;
+    text-align: right;
+    width: 40px;
+    left: 25px;
+    top: 282px;
 }
