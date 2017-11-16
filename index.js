@@ -68,6 +68,12 @@ app.post('/template', (req, res) => {
             case '9':
               res.render(path.join(__dirname + '/views/ticket_maya_QR_Only.html'), { data: data })
               break;
+            case '10':
+              res.render(path.join(__dirname + '/views/e-ticket-03.html'), { data: data })
+              break;
+            case '11':
+              res.render(path.join(__dirname + '/views/maya-a4.html'), { data: data })
+              break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
           }

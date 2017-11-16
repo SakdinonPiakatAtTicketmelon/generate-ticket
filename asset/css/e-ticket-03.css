@@ -1,0 +1,119 @@
+@page {
+    size: 425px 198px;
+}
+
+page[size="ticket"] {
+    width: 425px;
+    height: 198px;
+    display: block;
+}
+
+.ticket {
+    color: darkslategray;
+    position: relative;
+    width: 425px;
+    height: 198px;
+    display: block;
+}
+
+.template {
+    width: 425px;
+    height: 198px;
+    object-fit: scale-down;
+    position: absolute;
+}
+
+.ticket .eventDate {
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    text-align: left;
+    width: 95px;
+}
+
+.ticket .eventTime {
+    position: absolute;
+    left: 215px;
+    top: 60px;
+    text-align: left;
+    width: 95px;
+}
+
+.ticket .eventMonth {
+    position: absolute;
+    font-weight: 100;
+    left: 37px;
+    top: 60px;
+    width: 60px;
+    text-align: left;
+}
+
+.ticket .eventName {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 20px;
+    top: 20px;
+    width: 200px;
+}
+
+.ticket .eventCustomer {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 60px;
+    top: 90px;
+    width: 250px;
+}
+
+.ticket .eventType {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    width: 140px;
+    left: 70px;
+    top: 40px;
+}
+
+.ticket .eventPrice {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 35px;
+    left: 248px;
+    top: 40px;
+}
+
+.ticket .eventOrder {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 40px;
+    top: 277px;
+}
+
+.ticket .eventQRStr {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    width: 80px;
+    left: 320px;
+    top: 125px;
+}
+
+.ticket .eventQRImg {
+    position: absolute;
+    text-align: center;
+    left: 320px;
+    top: 60px;
+    height: 80px;
+    width: 80px;
+}
+
+.ticket .eventNo {
+    position: absolute;
+    text-align: left;
+    width: 80px;
+    left: 60px;
+    top: 107px;
+}
