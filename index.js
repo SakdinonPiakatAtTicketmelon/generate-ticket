@@ -74,6 +74,9 @@ app.post('/template', (req, res) => {
             case '11':
               res.render(path.join(__dirname + '/views/maya-a4.html'), { data: data })
               break;
+            case '12':
+              res.render(path.join(__dirname + '/views/TRANSMISSION.html'), { data: data })
+              break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
           }
