@@ -2,6 +2,7 @@
     size: 21cm 30cm;
     margin: 5mm 10mm 5mm 10mm;
 }
+
 page[size="ticket"] {
     background: white;
     width: 21cm;
@@ -10,6 +11,7 @@ page[size="ticket"] {
     margin: 0 auto;
     margin-bottom: 0.5cm;
 }
+
 .ticket {
     color: darkslategray;
     position: relative;
@@ -98,8 +100,8 @@ page[size="ticket"] {
     position: absolute;
     font-weight: bold;
     text-align: center;
-    width: 100px;
-    left: 580px;
+    width: 120px;
+    left: 570px;
     top: 130px;
 }
 
