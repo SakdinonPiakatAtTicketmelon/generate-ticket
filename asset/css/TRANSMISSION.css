@@ -2,6 +2,7 @@
     size: 21cm 30cm;
     margin: 5mm 10mm 5mm 10mm;
 }
+
 page[size="ticket"] {
     background: white;
     width: 21cm;
@@ -10,8 +11,9 @@ page[size="ticket"] {
     margin: 0 auto;
     margin-bottom: 0.5cm;
 }
+
 .ticket {
-    color: darkslategray;
+    color: #68696b;
     position: relative;
     width: 21cm;
     height: 30cm;
@@ -72,9 +74,10 @@ page[size="ticket"] {
     position: absolute;
     font-weight: bold;
     text-align: left;
-    width: 190px;
+    width: 355px;
     left: 175px;
     top: 127.7px;
+    font-size: 15.5px;
 }
 
 .ticket .eventPrice {
@@ -98,8 +101,8 @@ page[size="ticket"] {
     position: absolute;
     font-weight: bold;
     text-align: center;
-    width: 100px;
-    left: 580px;
+    width: 150px;
+    left: 555px;
     top: 130px;
 }
 
