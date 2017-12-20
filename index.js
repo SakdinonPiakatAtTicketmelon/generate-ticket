@@ -77,6 +77,9 @@ app.post('/template', (req, res) => {
             case '12':
               res.render(path.join(__dirname + '/views/TRANSMISSION.html'), { data: data })
               break;
+            case '13':
+              res.render(path.join(__dirname + '/views/QR_only_digi_top.html'), { data: data })
+              break;
             default:
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
           }
