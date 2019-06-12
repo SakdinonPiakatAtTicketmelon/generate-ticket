@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gen Ticket</title>
+    <link rel="stylesheet" type="text/css" href="asset/css/KnockKnock2019.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body id='body' style="margin:0px">
+    <script>
+        var data = '<%- JSON.stringify(data) %>'
+        function GenTicket(data) {
+            const dataJson = JSON.parse(data)
+            dataJson.map((ticket,index) => {
+                const tmp = CreateTicket(
+                    ticket.eventDateParam,
+                    ticket.eventMonthParam,
+                    ticket.eventTimeParam,
+                    ticket.eventTimeUnitParam,
+                    ticket.eventNameParam,
+                    ticket.eventCustomerParam,
+                    ticket.eventTypeParam,
+                    ticket.eventPriceParam,
+                    ticket.eventOrderParam,
+                    ticket.eventQRStrParam,
+                    ticket.eventNoParam
+                )
+                var page = document.createElement("PAGE");
+                page.setAttribute('id','page'+index)
+                page.setAttribute('size','A4')
+                page.appendChild(tmp);
+                document.body.appendChild(page);
+            })
+        }
+        function CreateTicket(
+            eventDateParam,
+            eventMonthParam,
+            eventTime,
+            eventTimeUnit,
+            eventNameParam,
+            eventCustomerParam,
+            eventTypeParam,
+            eventPriceParam,
+            eventOrderParam,
+            eventQRStrParam,
+            eventNoParam
+        ) {
+            var ticket = document.createElement("DIV");
+            ticket.className += 'ticket';
+            var template = document.createElement("IMG");
+            template.className += 'template';
+            template.src += 'asset/template/knockknockcovernew.png';
+
+            var eventDate = document.createElement("H1");
+            eventDate.className += 'eventDate';
+            var eventDateText = document.createTextNode(eventDateParam);
+            eventDate.appendChild(eventDateText);
+
+            var eventMonth = document.createElement("H2");
+            eventMonth.className += 'eventMonth';
+            var eventMonthText = document.createTextNode(eventMonthParam);
+            eventMonth.appendChild(eventMonthText);
+
+            var eventName = document.createElement("H2");
+            eventName.className += 'eventName';
+            var eventNameText = document.createTextNode(eventNameParam);
+            eventName.appendChild(eventNameText);
+
+            var eventCustomer = document.createElement("H3");
+            eventCustomer.className += 'eventCustomer';
+            var eventCustomerText = document.createTextNode(eventCustomerParam);
+            eventCustomer.appendChild(eventCustomerText);
+
+            var eventType = document.createElement("H4");
+            eventType.className += 'eventType';
+            var eventTypeText = document.createTextNode(eventTypeParam);
+            eventType.appendChild(eventTypeText);
+
+            var eventPrice = document.createElement("H4");
+            eventPrice.className += 'eventPrice';
+            var eventPriceText = document.createTextNode(eventPriceParam);
+            eventPrice.appendChild(eventPriceText);
+
+            var eventOrder = document.createElement("H3");
+            eventOrder.className += 'eventOrder';
+            var eventOrderText = document.createTextNode(eventOrderParam);
+            eventOrder.appendChild(eventOrderText);
+
+            var eventQRStr = document.createElement("H3");
+            eventQRStr.className += 'eventQRStr';
+            var eventQRStrText = document.createTextNode(eventQRStrParam);
+            eventQRStr.appendChild(eventQRStrText);
+
+            var eventQRImg = document.createElement("IMG");
+            eventQRImg.className += 'eventQRImg';
+            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '!&size=120x120'
+
+            var eventNo = document.createElement("H2");
+            eventNo.className += 'eventNo';
+            var eventNoText = document.createTextNode(eventNoParam);
+            eventNo.appendChild(eventNoText);
+
+            ticket.appendChild(template);
+            ticket.appendChild(eventDate);
+            ticket.appendChild(eventMonth);
+            ticket.appendChild(eventName);
+            ticket.appendChild(eventCustomer);
+            ticket.appendChild(eventType);
+            ticket.appendChild(eventPrice);
+            ticket.appendChild(eventOrder);
+            ticket.appendChild(eventQRStr);
+            ticket.appendChild(eventQRImg);
+            ticket.appendChild(eventNo);
+            return ticket
+        }
+        GenTicket(data)
+    </script>
+    
+</body>
+
+</html>
