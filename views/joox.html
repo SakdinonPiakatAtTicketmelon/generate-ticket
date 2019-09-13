@@ -3,7 +3,7 @@
 
 <head>
     <title>Gen Ticket</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/KnockKnock2019.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/joox.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
@@ -12,7 +12,7 @@
         var data = '<%- JSON.stringify(data) %>'
         function GenTicket(data) {
             const dataJson = JSON.parse(data)
-            dataJson.map((ticket,index) => {
+            dataJson.map((ticket, index) => {
                 const tmp = CreateTicket(
                     ticket.eventDateParam,
                     ticket.eventMonthParam,
@@ -27,8 +27,8 @@
                     ticket.eventNoParam
                 )
                 var page = document.createElement("PAGE");
-                page.setAttribute('id','page'+index)
-                page.setAttribute('size','A4')
+                page.setAttribute('id', 'page' + index)
+                page.setAttribute('size', 'A4')
                 page.appendChild(tmp);
                 document.body.appendChild(page);
             })
@@ -50,7 +50,7 @@
             ticket.className += 'ticket';
             var template = document.createElement("IMG");
             template.className += 'template';
-            template.src += 'asset/template/Knock knock ticket template last-1.png';
+            template.src += 'asset/template/ticket_template_joox.png';
 
             var eventDate = document.createElement("H1");
             eventDate.className += 'eventDate';
@@ -102,21 +102,21 @@
             eventNo.appendChild(eventNoText);
 
             ticket.appendChild(template);
-            ticket.appendChild(eventDate);
-            ticket.appendChild(eventMonth);
-            ticket.appendChild(eventName);
-            ticket.appendChild(eventCustomer);
+            // ticket.appendChild(eventDate);
+            // ticket.appendChild(eventMonth);
+            // ticket.appendChild(eventName);
+            // ticket.appendChild(eventCustomer);
             ticket.appendChild(eventType);
             ticket.appendChild(eventPrice);
-            ticket.appendChild(eventOrder);
+            // ticket.appendChild(eventOrder);
             ticket.appendChild(eventQRStr);
             ticket.appendChild(eventQRImg);
-            ticket.appendChild(eventNo);
+            // ticket.appendChild(eventNo);
             return ticket
         }
         GenTicket(data)
     </script>
-    
+
 </body>
 
 </html>

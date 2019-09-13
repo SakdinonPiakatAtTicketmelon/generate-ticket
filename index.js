@@ -38,6 +38,9 @@ app.post('/template', (req, res) => {
           });
           let template = fields.template
           switch (template) {
+            case '15':
+              res.render(path.join(__dirname + '/views/joox.html'), { data: data })
+              break;
             case '1':
               res.render(path.join(__dirname + '/views/ticket1.html'), { data: data })
               break;
