@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gen Ticket</title>
+    <link rel="stylesheet" type="text/css" href="asset/css/Ticket_template_default.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+</head>
+
+<body id='body' style="margin:0px">
+    <script>
+        var data = '<%- JSON.stringify(data) %>'
+        function GenTicket(data) {
+            console.log(data)
+            const dataJson = JSON.parse(data)
+            dataJson.map((ticket, index) => {
+                const tmp = CreateTicket(
+                    ticket.eventDayParam,
+                    ticket.eventDateParam,
+                    ticket.eventMonthParam,
+                    ticket.eventYearParam,
+                    ticket.eventTimeParam,
+                    ticket.eventTimeUnitParam,
+                    ticket.eventNameParam,
+                    ticket.eventNameLongParam,
+                    ticket.eventAgeParam,
+                    ticket.eventLocationParam,
+                    ticket.eventCustomerParam,
+                    ticket.eventTypeParam,
+                    ticket.eventPriceParam,
+                    ticket.eventPriceUnitParam,
+                    ticket.eventOrderParam,
+                    ticket.eventQRStrParam,
+                    ticket.eventNoParam,
+                    ticket.eventDisclaimerParam
+                )
+                var page = document.createElement("PAGE");
+                page.setAttribute('id', 'page' + index)
+                page.setAttribute('size', 'A4')
+                page.appendChild(tmp);
+                document.body.appendChild(page);
+            })
+        }
+        function CreateTicket(
+            eventDayParam,
+            eventDateParam,
+            eventMonthParam,
+            eventYearParam,
+            eventTimeParam,
+            eventTimeUnitParam,
+            eventNameParam,
+            eventNameLongParam,
+            eventAgeParam,
+            eventLocationParam,
+            eventCustomerParam,
+            eventTypeParam,
+            eventPriceParam,
+            eventPriceUnitParam,
+            eventOrderParam,
+            eventQRStrParam,
+            eventNoParam,
+            eventDisclaimerParam
+        ) {
+            var ticket = document.createElement("DIV");
+            ticket.className += 'ticket';
+            var template = document.createElement("IMG");
+            template.className += 'template';
+            template.src += 'asset/template/Ticket_template_default.png';
+
+            var eventDay = document.createElement("SPAN");
+            eventDay.className += 'eventDay';
+            var eventDayText = document.createTextNode(eventDayParam);
+            eventDay.appendChild(eventDayText);
+
+            var eventDate = document.createElement("SPAN");
+            eventDate.className += 'eventDate';
+            var eventDateText = document.createTextNode(eventDateParam);
+            eventDate.appendChild(eventDateText);
+
+            var eventMonth = document.createElement("SPAN");
+            eventMonth.className += 'eventMonth';
+            var eventMonthText = document.createTextNode(eventMonthParam);
+            eventMonth.appendChild(eventMonthText);
+
+            var eventYear = document.createElement("SPAN");
+            eventYear.className += 'eventYear';
+            var eventYearText = document.createTextNode(eventYearParam);
+            eventYear.appendChild(eventYearText);
+
+            var eventTime = document.createElement("SPAN");
+            eventTime.className += 'eventTime';
+            var eventTimeText = document.createTextNode(eventTimeParam);
+            eventTime.appendChild(eventTimeText);
+
+            var eventTimeUnit = document.createElement("SPAN");
+            eventTimeUnit.className += 'eventTimeUnit';
+            var eventTimeUnitText = document.createTextNode(eventTimeUnitParam);
+            eventTimeUnit.appendChild(eventTimeUnitText);
+
+            var eventName = document.createElement("SPAN");
+            eventName.className += 'eventName';
+            var eventNameText = document.createTextNode(eventNameParam);
+            eventName.appendChild(eventNameText);
+
+            var eventNameLong = document.createElement("SPAN");
+            eventNameLong.className += 'eventNameLong';
+            var eventNameLongText = document.createTextNode(eventNameLongParam);
+            eventNameLong.appendChild(eventNameLongText);
+
+            var eventAge = document.createElement("SPAN");
+            eventAge.className += 'eventAge';
+            var eventAgeText = document.createTextNode(eventAgeParam);
+            eventAge.appendChild(eventAgeText);
+
+            var eventLocation = document.createElement("SPAN");
+            eventLocation.className += 'eventLocation';
+            var eventLocationText = document.createTextNode(eventLocationParam);
+            eventLocation.appendChild(eventLocationText);
+
+            var eventCustomer = document.createElement("SPAN");
+            eventCustomer.className += 'eventCustomer';
+            var eventCustomerText = document.createTextNode(eventCustomerParam);
+            eventCustomer.appendChild(eventCustomerText);
+
+            var eventType = document.createElement("SPAN");
+            eventType.className += 'eventType';
+            var eventTypeText = document.createTextNode(eventTypeParam);
+            eventType.appendChild(eventTypeText);
+
+            var eventPrice = document.createElement("SPAN");
+            eventPrice.className += 'eventPrice';
+            var eventPriceText = document.createTextNode(eventPriceParam);
+            eventPrice.appendChild(eventPriceText);
+
+            var eventPriceUnit = document.createElement("SPAN");
+            eventPriceUnit.className += 'eventPriceUnit';
+            var eventPriceUnitText = document.createTextNode(eventPriceUnitParam);
+            eventPriceUnit.appendChild(eventPriceUnitText);
+
+            var eventOrder = document.createElement("SPAN");
+            eventOrder.className += 'eventOrder';
+            var eventOrderText = document.createTextNode(eventOrderParam);
+            eventOrder.appendChild(eventOrderText);
+
+            var eventQRStr = document.createElement("SPAN");
+            eventQRStr.className += 'eventQRStr';
+            var eventQRStrText = document.createTextNode(eventQRStrParam);
+            eventQRStr.appendChild(eventQRStrText);
+
+            var eventQRImg = document.createElement("IMG");
+            eventQRImg.className += 'eventQRImg';
+            eventQRImg.src += 'http://api.qrserver.com/v1/create-qr-code/?data=' + eventQRStrParam + '&size=150x150'
+
+            var eventNo = document.createElement("SPAN");
+            eventNo.className += 'eventNo';
+            var eventNoText = document.createTextNode(eventNoParam);
+            eventNo.appendChild(eventNoText);
+
+            var eventDisclaimer = document.createElement("SPAN");
+            eventDisclaimer.className += 'eventDisclaimer';
+            var eventDisclaimerText = document.createTextNode(eventDisclaimerParam);
+            eventDisclaimer.appendChild(eventDisclaimerText);
+
+            ticket.appendChild(template);
+            // ticket.appendChild(eventDay);
+            ticket.appendChild(eventDate);
+            // ticket.appendChild(eventMonth);
+            // ticket.appendChild(eventYear);
+            // ticket.appendChild(eventTime);
+            // ticket.appendChild(eventTimeUnit);
+            ticket.appendChild(eventName);
+            ticket.appendChild(eventNameLong);
+            // ticket.appendChild(eventAge);
+            ticket.appendChild(eventLocation);
+            ticket.appendChild(eventCustomer);
+            ticket.appendChild(eventType);
+            ticket.appendChild(eventPrice);
+            ticket.appendChild(eventPriceUnit);
+            ticket.appendChild(eventOrder);
+            ticket.appendChild(eventQRStr);
+            ticket.appendChild(eventQRImg);
+            // ticket.appendChild(eventNo);
+            ticket.appendChild(eventDisclaimer);
+            return ticket
+        }
+        GenTicket(data)
+    </script>
+
+</body>
+
+</html>
