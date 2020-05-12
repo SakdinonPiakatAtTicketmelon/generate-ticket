@@ -1,57 +1,140 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gen Ticket</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="asset/css/image-picker.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+  </head>
 
-  <title>Gen Ticket</title>
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="asset/css/image-picker.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-</head>
+  <body>
+    <form action="/template" method="POST" enctype="multipart/form-data">
+      <div style="display:inline-block">
+        <input type="file" name="filetoupload" id="filetoupload" />
+      </div>
+      <div style="display:inline-block;float: left;">
+        <select class="image-picker show-html" name="template">
+          <option data-img-src="asset/template/templatePrint.png" value="test">
+            test
+          </option>
+          <option
+            data-img-src="asset/template/Ticket_template_default.png"
+            value="16"
+          >
+            default
+          </option>
+          <option
+            data-img-src="asset/template/ticket_template_joox.png"
+            value="15"
+          >
+            Joox
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-01.png"
+            data-img-class="first"
+            value="1"
+          >
+            Page 1
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-03.png"
+            value="2"
+          >
+            Page 2
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-03.1.png"
+            value="2.1"
+          >
+            Page 2
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-04.png"
+            value="3"
+          >
+            Page 3
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-05.png"
+            value="4"
+          >
+            Page 4
+          </option>
+          <option
+            data-img-src="asset/template/Template_Paper ticket-02.png"
+            value="5"
+          >
+            Page 2
+          </option>
+          <option
+            data-img-src="asset/template/Template_Epic_Pool_Party.jpg"
+            value="6"
+          >
+            EPIC POOL PARTY
+          </option>
+          <option
+            data-img-src="asset/template/Template_MAYA-Complimentary.png"
+            value="7"
+          >
+            Maya Complimentary
+          </option>
+          <option
+            data-img-src="asset/template/Template_MAYA-general.png"
+            value="8"
+          >
+            Maya General
+          </option>
+          <option
+            data-img-src="asset/template/Template_MAYA-general.png"
+            value="9"
+          >
+            Maya QR Only
+          </option>
+          <option data-img-src="asset/template/E-TICKET-03.png" value="10">
+            E-Ticket 03
+          </option>
+          <option data-img-src="asset/template/maya-a4.png" value="11">
+            Maya A4
+          </option>
+          <option data-img-src="asset/template/TRANSMISSION.png" value="12">
+            TRANSMISSION A4
+          </option>
+          <option data-img-src="asset/template/QR Only.png" value="13">
+            OR Only
+          </option>
+          <option
+            data-img-src="asset/template/Knock knock ticket template last-1.png"
+            value="14"
+          >
+            Knockknock 2019
+          </option>
+        </select>
+      </div>
 
-<body>
-  <form action="/template" method="POST" enctype="multipart/form-data">
-    <div style="display:inline-block">
-      <input type="file" name="filetoupload" id="filetoupload">
-    </div>
-    <div style="display:inline-block;float: left;">
-      <select class="image-picker show-html" name="template">
-        <option data-img-src="asset/template/Ticket_template_default.png" value="16"> default </option>
-        <option data-img-src="asset/template/ticket_template_joox.png" value="15"> Joox </option>
-        <option data-img-src="asset/template/Template_Paper ticket-01.png" data-img-class="first" value="1"> Page 1
-        </option>
-        <option data-img-src="asset/template/Template_Paper ticket-03.png" value="2"> Page 2 </option>
-        <option data-img-src="asset/template/Template_Paper ticket-03.1.png" value="2.1"> Page 2 </option>
-        <option data-img-src="asset/template/Template_Paper ticket-04.png" value="3"> Page 3 </option>
-        <option data-img-src="asset/template/Template_Paper ticket-05.png" value="4"> Page 4 </option>
-        <option data-img-src="asset/template/Template_Paper ticket-02.png" value="5"> Page 2 </option>
-        <option data-img-src="asset/template/Template_Epic_Pool_Party.jpg" value="6"> EPIC POOL PARTY </option>
-        <option data-img-src="asset/template/Template_MAYA-Complimentary.png" value="7"> Maya Complimentary </option>
-        <option data-img-src="asset/template/Template_MAYA-general.png" value="8"> Maya General </option>
-        <option data-img-src="asset/template/Template_MAYA-general.png" value="9"> Maya QR Only </option>
-        <option data-img-src="asset/template/E-TICKET-03.png" value="10"> E-Ticket 03 </option>
-        <option data-img-src="asset/template/maya-a4.png" value="11"> Maya A4 </option>
-        <option data-img-src="asset/template/TRANSMISSION.png" value="12"> TRANSMISSION A4 </option>
-        <option data-img-src="asset/template/QR Only.png" value="13"> OR Only </option>
-        <option data-img-src="asset/template/Knock knock ticket template last-1.png" value="14"> Knockknock 2019
-        </option>
-      </select>
-    </div>
-
-    <input type="submit" value="Submit">
-  </form>
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script src="asset/js/image-picker.min.js"></script>
-  <script>
-    $("select").imagepicker({
-      hide_select: true,
-      show_label: false
-    })
-  </script>
-</body>
-
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="asset/js/image-picker.min.js"></script>
+    <script>
+      $("select").imagepicker({
+        hide_select: true,
+        show_label: false
+      });
+    </script>
+  </body>
 </html>

@@ -2,20 +2,30 @@
 <html>
   <head>
     <title>Gen Ticket</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/ticket1.css" />
+    <link rel="stylesheet" type="text/css" href="asset/css/testPdf.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro"
       rel="stylesheet"
     />
   </head>
 
   <body>
     <page id="page" size="A4"> </page>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+    <script src="../asset/js/html2canvas.min.js"></script>
+    <script src="../asset/js/qrcode.min.js"></script>
+
     <script>
-      var data = "<%- JSON.stringify(data) %>";
-      function GenTicket(data) {
-        const dataJson = JSON.parse(data);
-        dataJson.map(ticket => {
+      var data = `<%- JSON.stringify(data) %>`;
+      const dataJson = JSON.parse(data);
+      async function GenTicket() {
+        for (const ticket of dataJson) {
           CreateTicket(
             ticket.eventDateParam,
             ticket.eventMonthParam,
@@ -29,9 +39,10 @@
             ticket.eventQRStrParam,
             ticket.eventNoParam
           );
-        });
+          let delayres = await delay(1000);
+        }
       }
-      function CreateTicket(
+      async function CreateTicket(
         eventDateParam,
         eventMonthParam,
         eventTime,
@@ -44,11 +55,14 @@
         eventQRStrParam,
         eventNoParam
       ) {
+        console.log("ticket", eventNoParam);
         var ticket = document.createElement("DIV");
         ticket.className += "ticket1";
+        ticket.id = eventNoParam;
+
         var template = document.createElement("IMG");
         template.className += "template1";
-        template.src += "asset/template/Template_Paper ticket-01.png";
+        template.src += "asset/template/templatePrint.png";
 
         var eventDate = document.createElement("H1");
         eventDate.className += "eventDate";
@@ -67,6 +81,7 @@
 
         var eventCustomer = document.createElement("H3");
         eventCustomer.className += "eventCustomer";
+
         var eventCustomerText = document.createTextNode(eventCustomerParam);
         eventCustomer.appendChild(eventCustomerText);
 
@@ -80,43 +95,90 @@
         var eventPriceText = document.createTextNode(eventPriceParam);
         eventPrice.appendChild(eventPriceText);
 
-        var eventOrder = document.createElement("H3");
+        var eventOrder = document.createElement("H1");
         eventOrder.className += "eventOrder";
         var eventOrderText = document.createTextNode(eventOrderParam);
         eventOrder.appendChild(eventOrderText);
 
-        var eventQRStr = document.createElement("H3");
+        var eventQRStr = document.createElement("H1");
         eventQRStr.className += "eventQRStr";
         var eventQRStrText = document.createTextNode(eventQRStrParam);
         eventQRStr.appendChild(eventQRStrText);
 
         var eventQRImg = document.createElement("IMG");
         eventQRImg.className += "eventQRImg";
-        eventQRImg.src +=
-          "http://api.qrserver.com/v1/create-qr-code/?data=" +
-          eventQRStrParam +
-          "!&size=120x120";
-
-        var eventNo = document.createElement("H2");
-        eventNo.className += "eventNo";
-        var eventNoText = document.createTextNode(eventNoParam);
-        eventNo.appendChild(eventNoText);
+        eventQRImg.id += "eventQRImg";
+        var typeNumber = 3;
+        var errorCorrectionLevel = "L";
+        var qr = qrcode(typeNumber, errorCorrectionLevel);
+        qr.addData(eventQRStrParam);
+        qr.make();
+        eventQRImg.src = qr.createDataURL(2, 5);
 
         ticket.appendChild(template);
-        ticket.appendChild(eventDate);
-        ticket.appendChild(eventMonth);
-        ticket.appendChild(eventName);
-        ticket.appendChild(eventCustomer);
-        ticket.appendChild(eventType);
-        ticket.appendChild(eventPrice);
-        ticket.appendChild(eventOrder);
+        // ticket.appendChild(eventType);
+        // ticket.appendChild(eventCustomer);
+        // ticket.appendChild(eventPrice);
         ticket.appendChild(eventQRStr);
         ticket.appendChild(eventQRImg);
-        ticket.appendChild(eventNo);
+        ticket.appendChild(eventOrder);
 
         document.getElementById("page").appendChild(ticket);
+        print(eventNoParam);
       }
-      GenTicket(data);
+      GenTicket();
+      function removeElement(elementId) {
+        // Removes an element from the document
+        var element = document.getElementById(elementId);
+        element.parentNode.removeChild(element);
+      }
+      async function generate() {
+        let i = 0;
+        for (ticket of dataJson) {
+          const ticket = "ticket" + i;
+          let delayres = await delay(1000);
+          print(ticket);
+          i++;
+        }
+      }
+      async function print(elementId) {
+        var elementHTML = $("#" + elementId).html();
+        var specialElementHandlers = {
+          "#elementH": function(element, renderer) {
+            return true;
+          }
+        };
+        var margins = {
+          top: 8,
+          bottom: 8,
+          left: 8,
+          width: 8
+        };
+
+        return await html2canvas(document.querySelector("#" + elementId)).then(
+          canvas => {
+            var pdf = new jsPDF("p", "pt", "a4");
+            pdf.addImage(
+              canvas.toDataURL("image/png"),
+              "PNG",
+              15,
+              100,
+              565,
+              645
+            );
+            pdf.save(elementId);
+            document.getElementById(elementId).remove();
+          }
+        );
+      }
+
+      async function delay(delayInms) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(2);
+          }, delayInms);
+        });
+      }
     </script>
   </body>
 </html>
