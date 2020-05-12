@@ -108,12 +108,12 @@
         var eventQRImg = document.createElement("IMG");
         eventQRImg.className += "eventQRImg";
         eventQRImg.id += "eventQRImg";
-        var typeNumber = 3;
+        var typeNumber = 2;
         var errorCorrectionLevel = "L";
         var qr = qrcode(typeNumber, errorCorrectionLevel);
         qr.addData(eventQRStrParam);
         qr.make();
-        eventQRImg.src = qr.createDataURL(2, 5);
+        eventQRImg.src = qr.createDataURL(50, 5);
 
         ticket.appendChild(template);
         // ticket.appendChild(eventType);
