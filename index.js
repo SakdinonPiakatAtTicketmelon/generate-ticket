@@ -42,6 +42,19 @@ app.post("/template", (req, res) => {
                 data: data
               });
               break;
+            case "WCD_Ticket_EMPTY":
+              res.render(
+                path.join(__dirname + "/views/WCD_Ticket_EMPTY.html"),
+                {
+                  data: data
+                }
+              );
+              break;
+            case "WCD_Promo_EMPTY":
+              res.render(path.join(__dirname + "/views/WCD_Promo_EMPTY.html"), {
+                data: data
+              });
+              break;
             case "16":
               res.render(
                 path.join(__dirname + "/views/Ticket_template_default.html"),
