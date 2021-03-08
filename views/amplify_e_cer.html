@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gen Ticket</title>
+    <link rel="stylesheet" type="text/css" href="asset/css/amplify_e_cer.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <page id="page" size="A4"> </page>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+    <script src="../asset/js/html2canvas.min.js"></script>
+    <script src="../asset/js/qrcode.min.js"></script>
+
+    <script>
+      var data = `<%- JSON.stringify(data) %>`;
+      const dataJson = JSON.parse(data);
+      async function GenTicket() {
+        for (const ticket of dataJson) {
+          console.log("testttt", ticket);
+          CreateTicket(ticket);
+          let delayres = await delay(1000);
+        }
+      }
+      async function CreateTicket(ticketInfo) {
+        console.log("ticket", ticketInfo);
+        var ticket = document.createElement("DIV");
+        ticket.className += "ticket1";
+        ticket.id = "T" + ticketInfo.No;
+
+        var template = document.createElement("IMG");
+        template.className += "template1";
+        template.src += "asset/template/amplify e-certificate.png";
+
+        var eventCustomer = document.createElement("H1");
+        eventCustomer.className += "eventCustomer";
+        var eventCustomerText = document.createTextNode(ticketInfo.Name);
+        eventCustomer.appendChild(eventCustomerText);
+
+        ticket.appendChild(template);
+        ticket.appendChild(eventCustomer);
+
+        document.getElementById("page").appendChild(ticket);
+        print(ticketInfo.No);
+        removeElement("T" + ticketInfo.No);
+      }
+      GenTicket();
+      function removeElement(elementId) {
+        // Removes an element from the document
+        var element = document.getElementById(elementId);
+        element.parentNode.removeChild(element);
+      }
+      async function generate() {
+        let i = 0;
+        for (ticket of dataJson) {
+          const ticket = "ticket" + i;
+          let delayres = await delay(1000);
+          print(ticket);
+          i++;
+        }
+      }
+      async function print(elementId) {
+        console.log(elementId);
+        var elementHTML = $("#" + elementId).html();
+        console.log(elementHTML);
+        var specialElementHandlers = {
+          "#elementH": function(element, renderer) {
+            return true;
+          }
+        };
+        var margins = {
+          top: 8,
+          bottom: 8,
+          left: 8,
+          width: 8
+        };
+
+        return await html2canvas(document.querySelector("#T" + elementId)).then(
+          canvas => {
+            var pdf = new jsPDF("l", "pt", "a4");
+            pdf.addImage(
+              canvas.toDataURL("image/png"),
+              "PNG",
+              90,
+              45,
+              668,
+              515
+            );
+            pdf.save(elementId);
+            document.getElementById(elementId).remove();
+          }
+        );
+      }
+
+      async function delay(delayInms) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            resolve(2);
+          }, delayInms);
+        });
+      }
+    </script>
+  </body>
+</html>

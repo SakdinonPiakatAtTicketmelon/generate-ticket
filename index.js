@@ -36,9 +36,15 @@ app.post("/template", (req, res) => {
             if (err) throw err;
           });
           let template = fields.template;
+          console.log("template", template);
           switch (template) {
             case "test":
               res.render(path.join(__dirname + "/views/testPdf.html"), {
+                data: data
+              });
+              break;
+            case "amplify e-certificate":
+              res.render(path.join(__dirname + "/views/amplify_e_cer.html"), {
                 data: data
               });
               break;

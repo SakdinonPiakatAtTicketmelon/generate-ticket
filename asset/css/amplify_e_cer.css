@@ -1,0 +1,149 @@
+@page {
+    size: 16.6cm 5.6cm;
+}
+
+* {
+    font-family: 'Source Serif Pro', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: Semi Bold;
+    white-space: nowrap;
+    font-family: 'Source Serif Pro', sans-serif;
+    color: #775812;
+}
+
+page[size="ticket"] {
+    background: white;
+    width: 1336px;
+    height: 1030px;
+    display: block;
+    margin: -8px -8px;
+}
+
+.ticket1 {
+    color: darkslategray;
+    position: relative;
+    width: 1336px;
+    height: 1030px;
+    display: inline-block;
+    /* border: 1px solid; */
+}
+
+.template1 {
+    width: 1336px;
+    height: 1030px;
+    position: absolute;
+}
+
+.ticket1 .eventDate {
+    position: absolute;
+    left: 40px;
+    top: 5px;
+    text-align: center;
+    width: 50px;
+}
+
+.ticket1 .eventMonth {
+    position: absolute;
+    font-weight: 100;
+    left: 40px;
+    top: 30px;
+    width: 50px;
+    text-align: center;
+}
+
+.ticket1 .eventName {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 90px;
+    top: 15px;
+    width: 350px;
+}
+
+.ticket1 .eventCustomer {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+    left: 170px;
+    top: 510px;
+    width: 990px;
+}
+
+.ticket1 .eventType {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    left: 145px;
+    top: 840px;
+    font-size: 50px;
+    width: 800px;
+    height: 170px;
+    font-family: 'Source Serif Pro', sans-serif;
+    color: #775812;
+}
+
+.ticket1 .eventType p {
+    margin: 0px;
+}
+
+.ticket1 .eventPrice {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 50px;
+    top: 135px;
+}
+
+.ticket1 .eventOrder {
+    position: absolute;
+    font-weight: bold;
+    text-align: left;
+    left: 265px;
+    top: 1154px;
+    letter-spacing: 3px;
+    width: 225px;
+}
+
+.ticket1 .eventQRStr {
+    position: absolute;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-align: left;
+    left: 545px;
+    top: 1035px;
+    width: 440px;
+    font-size: 56px;
+}
+
+.ticket1 .eventQRImg {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    left: 80px;
+    top: 780px;
+    height: 350px;
+    width: 350px;
+}
+
+.ticket1 .eventNo {
+    position: absolute;
+    text-align: left;
+    width: 100px;
+    left: 528px;
+    top: 35px;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
